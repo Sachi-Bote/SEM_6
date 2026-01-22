@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SweetBite Bakery | Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <div class="brand">SweetBite<span>Bakery</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a class="active" href="products.html">Products</a>
+      <a href="speciality.html">Speciality Cakes</a>
+      <a href="findus.html">Find Us</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Products</h2>
+    <p class="section-sub">A clean collection of our best sellers.</p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://plus.unsplash.com/premium_photo-1723618822165-0b13c0471fc4?q=80&w=708&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <h4>Chocolate Cloud Cake</h4>
+        <p>Dark chocolate + soft cream layers.</p>
+        <div class="price">₹499</div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1519869491916-8ca6f615d6bd?auto=format&fit=crop&w=1000&q=80" alt="">
+        <h4>Vanilla Cupcakes</h4>
+        <p>Minimal frosting. Premium vanilla.</p>
+        <div class="price">₹199</div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?auto=format&fit=crop&w=1000&q=80" alt="">
+        <h4>Warm Bread Loaf</h4>
+        <p>Fresh baked. Soft & airy.</p>
+        <div class="price">₹99</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ ORDER ONLINE BELOW PRODUCTS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Order Online</h2>
+    <p class="section-sub">Fast. Fresh. Delivered with love 💗</p>
+
+    <div class="split">
+      <div class="glass-card">
+        <h3 style="margin-bottom:10px;">How it works</h3>
+        <p style="color: var(--muted); font-size: 14px; line-height: 1.8;">
+          Select your product, choose quantity, enter delivery details and confirm.
+          We’ll bake fresh and deliver quickly.
+        </p>
+
+        <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="speciality.html">Order Speciality Cake</a>
+          <a class="btn secondary" href="findus.html">Pickup from Store</a>
+        </div>
+      </div>
+
+      <form class="form">
+        <h3 style="margin-bottom:6px;">Quick Order</h3>
+
+        <select required>
+          <option value="">Select Product</option>
+          <option>Chocolate Cloud Cake</option>
+          <option>Vanilla Cupcakes</option>
+          <option>Warm Bread Loaf</option>
+        </select>
+
+        <input type="number" min="1" placeholder="Quantity" required>
+        <input type="text" placeholder="Delivery Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">© 2026 SweetBite Bakery</footer>
+</body>
+</html>
