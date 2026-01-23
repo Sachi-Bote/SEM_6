@@ -1,0 +1,60 @@
+// FIND US PAGE ONLY
+document.addEventListener("DOMContentLoaded", () => {
+  const mapEl = document.getElementById("map");
+  if (!mapEl) return;
+
+  // Default bakery location (Pune example)
+  const bakeryLatLng = [18.5204, 73.8567];
+
+  const map = L.map("map").setView(bakeryLatLng, 13);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  const marker = L.marker(bakeryLatLng).addTo(map);
+  marker.bindPopup("<b>SweetBite Bakery</b><br/>Freshly baked everyday ✨").openPopup();
+
+  let radiusMeters = 2000;
+
+  let circle = L.circle(bakeryLatLng, {
+    radius: radiusMeters
+  }).addTo(map);
+
+  const range = document.getElementById("radiusRange");
+  const label = document.getElementById("radiusLabel");
+
+  function updateRadius(valKm){
+    const km = Number(valKm);
+    radiusMeters = km * 1000;
+
+    label.textContent = km + " km";
+    circle.setRadius(radiusMeters);
+
+    // zoom nicely depending on radius
+    map.fitBounds(circle.getBounds(), { padding: [30, 30] });
+  }
+
+  // default
+  updateRadius(range.value);
+
+  range.addEventListener("input", (e) => updateRadius(e.target.value));
+});
+
+
+// ✅ Products page flavour toggle
+function toggleFlavours(id) {
+  // close other open flavour boxes
+  const all = document.querySelectorAll(".flavours");
+  all.forEach(box => {
+    if (box.id !== id) box.style.display = "none";
+  });
+
+  // toggle selected
+  const selected = document.getElementById(id);
+  if (selected.style.display === "block") {
+    selected.style.display = "none";
+  } else {
+    selected.style.display = "block";
+  }
+}
