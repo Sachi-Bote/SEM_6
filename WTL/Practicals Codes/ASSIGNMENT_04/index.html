@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mac Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="calculator">
+
+  <div class="top-bar">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+  </div>
+
+  <!-- DISPLAY -->
+  <div class="display">
+    <div id="history" class="history"></div>
+    <div id="result" class="result">0</div>
+  </div>
+
+  <button class="mode-btn" onclick="toggleMode()">SCI</button>
+
+  <!-- BASIC PANEL -->
+  <div id="basicPanel" class="panel">
+    <button class="gray" onclick="clearAll()">AC</button>
+    <button class="gray" onclick="toggleSign()">+/-</button>
+    <button class="gray" onclick="append('%')">%</button>
+    <button class="orange" onclick="append('/')">÷</button>
+
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <button onclick="append('9')">9</button>
+    <button class="orange" onclick="append('*')">×</button>
+
+    <button onclick="append('4')">4</button>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+    <button class="orange" onclick="append('-')">−</button>
+
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button class="orange" onclick="append('+')">+</button>
+
+    <button class="zero" onclick="append('0')">0</button>
+    <button onclick="append('.')">.</button>
+    <button class="orange" onclick="calculate()">=</button>
+  </div>
+
+  <!-- SCI PANEL -->
+  <div id="sciPanel" class="panel hidden">
+    <button onclick="sci('sqrt')">√</button>
+    <button onclick="sci('square')">x²</button>
+    <button onclick="sci('reciprocal')">1/x</button>
+    <button onclick="append('**')">xʸ</button>
+
+    <button onclick="sci('sin')">sin</button>
+    <button onclick="sci('cos')">cos</button>
+    <button onclick="sci('tan')">tan</button>
+    <button onclick="sci('log')">log</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
